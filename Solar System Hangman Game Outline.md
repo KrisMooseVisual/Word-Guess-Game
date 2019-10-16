@@ -9,19 +9,23 @@
 
     - *Press Any Key To Begin!*
     
-    - *Win Counter 10 Words Right Wins!*
+    - *Wins Counter / 10 Words Right Wins!*
     
     - *Your Word -
+            :Word Dislplay:
+        "_ _ _ _ _ _"
       "U _ A N _ S "*
         •¡Note! Letters guessed correctly fill the spaces.•
      -Correct word reveals picture of respective planet/moon/star, w/ exciting fact about the planet. *will try to apply cheesy song along with photo* 
     
-    - *Remaining Tries -
+    - *Remaining # of Tries -
     15 tries per word*  
     
     - *Letters Guessed=
     "B E R U X Q N..."*
         •¡Note! Letters guessed shouldn't function once used•
+
+    •¡NOTE! After user wins or loses, next word choice should be available to play•        
 
 •RIGHT ANSWER PHOTOS & WORDS &FUN FACTS•
     - Sun
