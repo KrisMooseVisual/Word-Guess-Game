@@ -1,15 +1,16 @@
 •SOLAR SYSTEM THEME• 
 
-    *Floating picture top center of planet earth.*
+    *Floating picture top center of Milky Way.*
 
-      Font - "Citizen Earth: Space Traveler" one top bottom of picture.
+      Font - "Citizen Earth: Space Traveler" one top bottom of picture. 
 
 
 •START UP & POINT SYSTEM LAYOUT•
 
     - *Press Any Key To Begin!*
     
-    - *Wins Counter / 10 Words Right Wins!*
+    - *Wins Counter / 10 Words Right Wins!
+    4 losses and Game Over Man!*
     
     - *Your Word -
             :Word Dislplay:
