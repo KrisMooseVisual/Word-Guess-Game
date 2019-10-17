@@ -11,17 +11,16 @@
 </head>
 
 <body>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="float-style.css">
 
     <!-- Placed in center middle colomn below photo-->
-    <h1>Citizen Earth:
+
+    <h1 id="heading">Citizen Earth:
         Solar System Hangman!</h1>
 
     <!--center solar system photo/shrink down a bit-->
     <img src="assets/images/Our Solar System.jpg">
 
-    <p>
+    <div class="rules">
         <!-- Games rules blingy?-->
         <h3>•GAME RULES•</h3>
         <!-- make rules stand out with font-->
@@ -29,8 +28,8 @@
         <h3>#2 - Get 10 words out of 14 right, YOU WIN!</h3>
         <h3>#3 - You get 15 letters per round.</h3>
         <h3>#3 - Get 4 wrong and you lose game.</h3>
-    </p>
-    <div>
+    </div>
+    <div class="display">
         <p id="directions-text">
             <h2>Press Enter To Begin</h2>
         </p>
@@ -40,7 +39,7 @@
         <p id="lettersUsed-text"></p>
         <p id="score"></p>
     </div>
-
+                <!-----------HTML ENDS HERE!--------->
     <script type="text/javascript">
 
 
@@ -63,36 +62,38 @@
             "Constellations",
         ];
 
+        // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
+        var word = computerRandomChoice
+        [Math.floor(Math.random() * computerRandomChoice.length)];
+        console.log(computerRandomChoice);
+
+
+        for (var i = 0; i < word.length; i++) {
+            answerArray[i] = "_";
+        }
+//Shot in the dark.. trying to tie this w/ the 'variable word'
+        var remainingLetters = word.length;
+
         var computerRandomChoice = 0;
+        var playerChoice = 0;
         var wins = 0;
         var losses = 0;
         var lettersUsed = 0;
         var score = 0;
 
-        // used rock paper scissors activity to help
-        var directionsText = document.getElementById("directtionsText-text");
-        var computerRandomChoice = document.getElementById("computerRandomChoice-text");
-        var wins = document.getElementById("wins-text");
-        var losses = document.getElementById("losses-text");
-        var letterUsed = document.getElementById("letterUsed-text");
-        var score = document.getElementById("score-text");
+
 
         document.onkeyup = function (event) {
-            var playerGuess = event.key;
+            var playerChoice = event.key;
 
-            // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
-            var computerRandomChoice = computerRandomChoice
-            [Math.floor(Math.random() * computerRandomChoice.length)];
+
 
             //variables for userchoice, wins, losses, letters used, & score
-            for (var i = 0; i < userWords.length; i++) {
-                computerRandomChoice[i] = "_";
-            }
+            if ((playerChoice === "sun") || (playerChoice === "mercury") || (playerChoice === "venus") || (playerChoice === "earth") || (playerChoice === "mars") || (playerChoice === "jupiter") || (playerChoice === "saturn") || (playerChoice === "uranus") || (playerChoice === "neptune") || (playerChoice === "pluto") || (playerChoice === "miklyway") || (playerChoice === "Betelgeuse") || (playerChoice === "Comets") || (playerChoice === "Constellations")
 
-            var remainingLetters = word.length;
+        }
 
 
-        };
 
 
 
