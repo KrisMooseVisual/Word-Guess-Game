@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Solar System Hangman!</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="float-style.css">
+
 
 </head>
 
 <body>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="float-style.css">
 
     <!-- Placed in center middle colomn below photo-->
     <h1>Citizen Earth:
@@ -20,7 +21,8 @@
     <!--center solar system photo/shrink down a bit-->
     <img src="assets/images/Our Solar System.jpg">
 
-    <p> <!-- Games rules blingy?-->
+    <p>
+        <!-- Games rules blingy?-->
         <h3>•GAME RULES•</h3>
         <!-- make rules stand out with font-->
         <h3>#1 - There are 14 words.</h3>
@@ -32,42 +34,65 @@
         <p id="directions-text">
             <h2>Press Enter To Begin</h2>
         </p>
-        <p id="userchoice-text"></p>
-        <p id="Wins-text"></p>
-        <p id="Losses-text"></p>
-        <p id="LettersUsed-text"></p>
+        <p id="computerRandomChoice-text"></p>
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="lettersUsed-text"></p>
         <p id="score"></p>
     </div>
 
     <script type="text/javascript">
 
-    
+
         //VARIABLES WORDS
-    // try to randomize what computer chooses
-    var userWords = [
-    "sun", 
-    "mercury", 
-    "venus",
-    "earth",
-    "mars",
-    "jupiter",
-    "saturn",
-    "uranus",
-    "neptune",
-    "pluto",
-    "milkyway",
-    "Betelgeuse",
-    "Comets",
-    "Constellations",
-    ];
-    // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
-    var userWords = userWords
-    [Math.floor(Math.random() * userWords.length)];
+        // try to randomize what computer chooses
+        var userWords = [
+            "sun",
+            "mercury",
+            "venus",
+            "earth",
+            "mars",
+            "jupiter",
+            "saturn",
+            "uranus",
+            "neptune",
+            "pluto",
+            "milkyway",
+            "Betelgeuse",
+            "Comets",
+            "Constellations",
+        ];
 
-    //variables for userchoice, wins, losses, letters used, & score
-    var 
+        var computerRandomChoice = 0;
+        var wins = 0;
+        var losses = 0;
+        var lettersUsed = 0;
+        var score = 0;
 
-    
+        // used rock paper scissors activity to help
+        var directionsText = document.getElementById("directtionsText-text");
+        var computerRandomChoice = document.getElementById("computerRandomChoice-text");
+        var wins = document.getElementById("wins-text");
+        var losses = document.getElementById("losses-text");
+        var letterUsed = document.getElementById("letterUsed-text");
+        var score = document.getElementById("score-text");
+
+        document.onkeyup = function(event){
+        var playerGuess = event.key;
+
+             // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
+        var computerRandomChoice = computerRandomChoice
+        [Math.floor(Math.random() * computerRandomChoice.length)];
+
+        //variables for userchoice, wins, losses, letters used, & score
+        
+
+        }
+
+
+       
+
+
 
 
 
