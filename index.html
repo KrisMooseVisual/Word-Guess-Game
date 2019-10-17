@@ -6,44 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Solar System Hangman!</title>
-
-
 </head>
+
+
 
 <body>
 
     <!-- Placed in center middle colomn below photo-->
 
-    <h1 id="heading">Citizen Earth:
-        Solar System Hangman!</h1>
+    <h1 id="heading"><center>Citizen Earth:
+        Solar System Hangman!</center></h1>
+        <script text=:"game.js"></script>
 
     <!--center solar system photo/shrink down a bit-->
-    <img src="assets/images/Our Solar System.jpg">
+    <center><img src="assets/images/Our Solar System.jpg"></center>
 
     <div class="rules">
         <!-- Games rules blingy?-->
-        <h3>•GAME RULES•</h3>
+        <center><h3>•GAME RULES•</h3>
         <!-- make rules stand out with font-->
         <h3>#1 - There are 14 words.</h3>
         <h3>#2 - Get 10 words out of 14 right, YOU WIN!</h3>
         <h3>#3 - You get 15 letters per round.</h3>
-        <h3>#3 - Get 4 wrong and you lose game.</h3>
+        <h3>#3 - Get 4 wrong and you lose game.</h3></center>
+
+<!-- Try to make below clickable-->
+        <center><h2>•Click Here To Start Game•</h2></center>
+
     </div>
-    <div class="display">
-        <p id="directions-text">
-            <h2>Press Enter To Begin</h2>
-        </p>
-        <p id="computerRandomChoice-text"></p>
+    <div>
+        <p id="directions-text"></p>
+        <p id="lettersUsed-text"> Letters Used:</p>
         <p id="wins-text"></p>
         <p id="losses-text"></p>
-        <p id="lettersUsed-text"></p>
-        <p id="score"></p>
+        <p id="wrongLetter-text"></p>
     </div>
                 <!-----------HTML ENDS HERE!--------->
     <script type="text/javascript">
 
 
-        //VARIABLES WORDS
+        //ARRAY WORDS!
         // try to randomize what computer chooses
         var computerRandomChoice = [
             "sun",
@@ -74,12 +76,11 @@
 //Shot in the dark.. trying to tie this w/ the 'variable word'
         var remainingLetters = word.length;
 
-        var computerRandomChoice = 0;
         var playerChoice = 0;
         var wins = 0;
         var losses = 0;
         var lettersUsed = 0;
-        var score = 0;
+        var wrongLetter = 0;
 
 
 
