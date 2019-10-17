@@ -46,7 +46,7 @@
 
         //VARIABLES WORDS
         // try to randomize what computer chooses
-        var userWords = [
+        var computerRandomChoice = [
             "sun",
             "mercury",
             "venus",
@@ -77,20 +77,25 @@
         var letterUsed = document.getElementById("letterUsed-text");
         var score = document.getElementById("score-text");
 
-        document.onkeyup = function(event){
-        var playerGuess = event.key;
+        document.onkeyup = function (event) {
+            var playerGuess = event.key;
 
-             // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
-        var computerRandomChoice = computerRandomChoice
-        [Math.floor(Math.random() * computerRandomChoice.length)];
+            // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
+            var computerRandomChoice = computerRandomChoice
+            [Math.floor(Math.random() * computerRandomChoice.length)];
 
-        //variables for userchoice, wins, losses, letters used, & score
-        
+            //variables for userchoice, wins, losses, letters used, & score
+            for (var i = 0; i < userWords.length; i++) {
+                computerRandomChoice[i] = "_";
+            }
 
-        }
+            var remainingLetters = word.length;
 
 
-       
+        };
+
+
+
 
 
 
