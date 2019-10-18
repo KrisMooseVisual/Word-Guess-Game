@@ -14,34 +14,49 @@
 
     <!-- Placed in center middle colomn below photo-->
 
-    <h1 id="heading"><center>Citizen Earth:
-        Solar System Hangman!</center></h1>
-        <script text=:"game.js"></script>
+    <h1 id="heading">
+        <center>Citizen Earth:
+            Solar System Hangman!</center>
+    </h1>
+    <script text=:"game.js"></script>
 
     <!--center solar system photo/shrink down a bit-->
     <center><img src="assets/images/Our Solar System.jpg"></center>
 
     <div class="rules">
         <!-- Games rules blingy?-->
-        <center><h3>•GAME RULES•</h3>
-        <!-- make rules stand out with font-->
-        <h3>#1 - There are 14 words.</h3>
-        <h3>#2 - Get 10 words out of 14 right, YOU WIN!</h3>
-        <h3>#3 - You get 15 letters per round.</h3>
-        <h3>#3 - Get 4 wrong and you lose game.</h3></center>
+        <center>
+            <h3>•GAME RULES•</h3>
+            <!-- make rules stand out with font-->
+            <h3>#1 - There are 14 words.</h3>
+            <h3>#2 - Get 10 words out of 14 right, YOU WIN!</h3>
+            <h3>#3 - You get 15 letters per round.</h3>
+            <h3>#3 - Get 4 wrong and you lose game.</h3>
+        </center>
 
-<!-- Try to make below clickable-->
-        <center><h2>•Click Here To Start Game•</h2></center>
+        <!-- Try to make below clickable-->
+        <center>
+            <h2 onclick="startGame()">•Click Here To Start Game•</h2>
+        </center>
+    
 
     </div>
+    <div id = "word"></div>
     <div>
-        <p id="directions-text"></p>
-        <p id="lettersUsed-text"> Letters Used:</p>
-        <p id="wins-text"></p>
-        <p id="losses-text"></p>
-        <p id="wrongLetter-text"></p>
+        <p id="wins-text">
+            <h2>Wins:</h2>
+        </p>
+        <p id="losses-text">
+            <h2>Losses:</h2>
+        </p>
+        <p id="wrongLetter-text">
+            <h2>Wrong Letters:<h2>
+        </p>
+        <p id="lettersUsed-text">
+            <h2>Letters Used:</h2>
+        </p>
     </div>
-                <!-----------HTML ENDS HERE!--------->
+    <!-----------HTML ENDS HERE!--------->
     <script type="text/javascript">
 
 
@@ -59,38 +74,73 @@
             "neptune",
             "pluto",
             "milkyway",
-            "Betelgeuse",
-            "Comets",
-            "Constellations",
+            "betelgeuse",
+            "comets",
+            "constellations",
         ];
+        //~~~~~~~~~~END ARRAY~~~~~~~~~~~~
 
-        // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
-        var word = computerRandomChoice
-        [Math.floor(Math.random() * computerRandomChoice.length)];
-        console.log(computerRandomChoice);
-
-
-        for (var i = 0; i < word.length; i++) {
-            answerArray[i] = "_";
-        }
-//Shot in the dark.. trying to tie this w/ the 'variable word'
-        var remainingLetters = word.length;
+        //Shot in the dark.. trying to tie this w/ the 'variable word'
+        //trying to remember what word is...
+       // var letters = word.length;
 
         var playerChoice = 0;
+
         var wins = 0;
         var losses = 0;
         var lettersUsed = 0;
         var wrongLetter = 0;
 
+        //create array to hold the blanks for the word and the actual letters
+        var wordBlanks = new Array;
+        var wordBreakdown = new Array;
 
 
+        // Random word try used " var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];" from rock paper scissor #7 activity as template
+        var fullWord = computerRandomChoice[Math.floor(Math.random() * computerRandomChoice.length)];
+
+        console.log(fullWord);
+
+        //function has onclick for "Click to Play" button
+        function startGame() {
+
+            console.log(startGame)
+
+            //store blanks in an array
+            for (var i = 0; i < fullWord.length; i++) {
+                wordBlanks[i] = "_";
+            }
+
+            //store letters in an array but iterating through the characters
+            for (var i = 0; i < fullWord.length; i++) {
+                wordBreakdown[i] = fullWord.charAt(i);
+            }
+
+            //show blanks in html called by div id "word"
+            document.getElementById("word").innerHTML = wordBlanks;
+
+        }
+ 
         document.onkeyup = function (event) {
-            var playerChoice = event.key;
+            playerChoice = event.key;
+            
 
+            for (var i = 0; i < fullWord.length; i++) {
 
+                //Does the player's choice exist in the letters in the wordBreakdown?
+                if(playerChoice == wordBreakdown[i]) {
+                    //replace the blank with the player's choice and reshow the word
+                    wordBlanks[i] = playerChoice;
+                    document.getElementById("word").innerHTML = wordBlanks;
+                }
+                
+            }
+     
+            //variables for userchoice, wins, losses, letters used, & score. Having hard time with this and how it will display. Will comeback.
 
-            //variables for userchoice, wins, losses, letters used, & score
-            if ((playerChoice === "sun") || (playerChoice === "mercury") || (playerChoice === "venus") || (playerChoice === "earth") || (playerChoice === "mars") || (playerChoice === "jupiter") || (playerChoice === "saturn") || (playerChoice === "uranus") || (playerChoice === "neptune") || (playerChoice === "pluto") || (playerChoice === "miklyway") || (playerChoice === "Betelgeuse") || (playerChoice === "Comets") || (playerChoice === "Constellations")
+            // if ((playerChoice === "sun") || (playerChoice === "mercury") || (playerChoice === "venus") || (playerChoice === "earth") || (playerChoice === "mars") || (playerChoice === "jupiter") || (playerChoice === "saturn") || (playerChoice === "uranus") || (playerChoice === "neptune") || (playerChoice === "pluto") || (playerChoice === "milkyway") || (playerChoice === "betelgeuse") || (playerChoice === "comets") || (playerChoice === "constellations")){
+
+            // }
 
         }
 
@@ -104,7 +154,6 @@
 
 
     </script>
-
 
 
 
