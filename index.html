@@ -38,10 +38,10 @@
         <center>
             <h2 onclick="startGame()">•Click Here To Start Game•</h2>
         </center>
-    
+
 
     </div>
-    <div id = "word"></div>
+    <div id="word"></div>
     <div>
         <p id="wins-text">
             <h2>Wins:</h2>
@@ -82,7 +82,7 @@
 
         //Shot in the dark.. trying to tie this w/ the 'variable word'
         //trying to remember what word is...
-       // var letters = word.length;
+        // var letters = word.length;
 
         var playerChoice = 0;
 
@@ -120,22 +120,22 @@
             document.getElementById("word").innerHTML = wordBlanks;
 
         }
- 
+
         document.onkeyup = function (event) {
             playerChoice = event.key;
-            
+
 
             for (var i = 0; i < fullWord.length; i++) {
 
                 //Does the player's choice exist in the letters in the wordBreakdown?
-                if(playerChoice == wordBreakdown[i]) {
+                if (playerChoice == wordBreakdown[i]) {
                     //replace the blank with the player's choice and reshow the word
                     wordBlanks[i] = playerChoice;
                     document.getElementById("word").innerHTML = wordBlanks;
                 }
-                
+
             }
-     
+
             //variables for userchoice, wins, losses, letters used, & score. Having hard time with this and how it will display. Will comeback.
 
             // if ((playerChoice === "sun") || (playerChoice === "mercury") || (playerChoice === "venus") || (playerChoice === "earth") || (playerChoice === "mars") || (playerChoice === "jupiter") || (playerChoice === "saturn") || (playerChoice === "uranus") || (playerChoice === "neptune") || (playerChoice === "pluto") || (playerChoice === "milkyway") || (playerChoice === "betelgeuse") || (playerChoice === "comets") || (playerChoice === "constellations")){
